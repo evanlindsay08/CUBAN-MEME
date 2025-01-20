@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
+import { CONTRACT_ADDRESS, PUMP_URL } from '../utils/constants'
 
 export default function BuySection() {
   const [showCopyNotification, setShowCopyNotification] = useState(false)
-  const address = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
   const copyAddress = () => {
-    navigator.clipboard.writeText(address)
+    navigator.clipboard.writeText(CONTRACT_ADDRESS)
     setShowCopyNotification(true)
     setTimeout(() => setShowCopyNotification(false), 2000)
   }
@@ -21,16 +21,26 @@ export default function BuySection() {
 
         <div className="max-w-2xl mx-auto space-y-8">
           <div className="grid grid-cols-2 gap-4">
-            <button className="bg-primary text-white py-4 px-6 rounded-lg text-center font-bold hover:bg-primary/90 transition">
+            <a 
+              href={PUMP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary text-white py-4 px-6 rounded-lg text-center font-bold hover:bg-primary/90 transition"
+            >
               BUY NOW ON
               <br />
               PUMP.FUN
-            </button>
-            <button className="bg-primary text-white py-4 px-6 rounded-lg text-center font-bold hover:bg-primary/90 transition">
+            </a>
+            <a 
+              href={PUMP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary text-white py-4 px-6 rounded-lg text-center font-bold hover:bg-primary/90 transition"
+            >
               BUY NOW ON
               <br />
-              RAYDIUM
-            </button>
+              PUMP.FUN
+            </a>
           </div>
 
           <div className="bg-navy-900/50 rounded-lg p-6">
@@ -38,7 +48,7 @@ export default function BuySection() {
             <div className="relative">
               <div className="flex items-center gap-4 bg-navy-950 p-4 rounded">
                 <code className="flex-1 font-mono text-sm md:text-base">
-                  {address}
+                  {CONTRACT_ADDRESS}
                 </code>
                 <button 
                   onClick={copyAddress}

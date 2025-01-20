@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { CONTRACT_ADDRESS } from '../utils/constants'
 
 interface FAQItem {
   question: string;
@@ -14,7 +15,7 @@ const faqItems: FAQItem[] = [
   },
   {
     question: "What is the official contract address and symbol for the Cuban Meme?",
-    answer: `The official contract address is ${address} and the symbol is $CUBAN. Always verify the contract address to ensure you're interacting with the genuine Cuban Meme token.`
+    answer: `The official contract address is ${CONTRACT_ADDRESS} and the symbol is $CUBAN. Always verify the contract address to ensure you're interacting with the genuine Cuban Meme token.`
   },
   {
     question: "How can I get Cuban Memes?",

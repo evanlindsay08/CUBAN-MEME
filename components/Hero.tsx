@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { CONTRACT_ADDRESS } from '../utils/constants'
 
 export default function Hero() {
   const [showCopyNotification, setShowCopyNotification] = useState(false)
-  const address = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
   const copyAddress = () => {
-    navigator.clipboard.writeText(address)
+    navigator.clipboard.writeText(CONTRACT_ADDRESS)
     setShowCopyNotification(true)
     setTimeout(() => setShowCopyNotification(false), 2000)
   }
@@ -34,7 +34,7 @@ export default function Hero() {
             <div className="relative">
               <div className="flex items-center gap-4 bg-navy-900/50 p-4 rounded">
                 <code className="flex-1 font-mono text-sm md:text-base">
-                  {address}
+                  {CONTRACT_ADDRESS}
                 </code>
                 <button 
                   onClick={copyAddress}

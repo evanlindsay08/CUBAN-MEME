@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { PUMP_URL } from '../utils/constants'
 
 export default function Navbar() {
   return (
@@ -25,9 +26,14 @@ export default function Navbar() {
             <Link href="#how-to-buy" className="text-white hover:text-primary transition">
               How to Buy
             </Link>
-            <button className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded font-bold transition">
+            <a
+              href={PUMP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded font-bold transition"
+            >
               Buy Now
-            </button>
+            </a>
           </div>
         </div>
       </div>
