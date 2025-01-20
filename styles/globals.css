@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-900: #06082E;
+  --navy-950: #020420;
+  --primary: #C41E3A;
+  --secondary: #FFD700;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--navy-900);
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.bg-gradient {
+  background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-950) 100%);
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* American flag-inspired background */
+.flag-background {
+  background: linear-gradient(
+    transparent 0%,
+    transparent calc(100% / 13),
+    rgba(178, 34, 52, 0.05) calc(100% / 13),
+    rgba(178, 34, 52, 0.05) calc(200% / 13),
+    transparent calc(200% / 13)
+  );
+  background-size: 100% 650%;
+  animation: wave 20s linear infinite;
+  position: absolute;
+  inset: 0;
+}
+
+.stars-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at 10px 10px,
+    rgba(255, 255, 255, 0.1) 2px,
+    transparent 0
+  );
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes wave {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+} 
